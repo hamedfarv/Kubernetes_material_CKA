@@ -1,0 +1,15 @@
+// Kubernetes Cluster Security
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+
+vi /etc/kubernetes/manifests/kube-apiserver.yaml
+
+vi /etc/kubernetes/manifests/etcd.yaml
+
+openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text
+
+openssl x509 -in /etc/kubernetes/pki/etcd/server.crt -text
+
+docker ps -a
+
+dokcer logs <container ID>

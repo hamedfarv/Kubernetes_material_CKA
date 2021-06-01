@@ -1,0 +1,26 @@
+// Kubernetes TroubleShooting
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+
+######### Application Failure #########
+
+kubectl -n alpha get svc mysql
+
+kubectl -n alpha get all
+
+kubectl -n alpha get svc mysql -o yaml > my_service.yaml
+
+kubectl -n alpha delete svc mysql
+
+kubectl describe svc mysql-service -n beta
+
+kubectl -n gamma expose pod mysql --name=mysql-service
+
+kubectl -n gamma get ep
+
+
+######### Control Plane Failure #########
+
+
+
+######### Worker Node Failure #########

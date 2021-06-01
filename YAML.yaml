@@ -1,0 +1,56 @@
+// Kubernetes core Objects
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+// YAML File structure
+
+# Key Value Pair
+
+name: hamed
+lastname: farvardin
+age: 32
+married: True , Yes , On
+
+person:
+    name: > "hamed
+             kdskhdjshdjhdsjd"  
+    lastname: "farvardin"
+    age: !!int 33
+    married: True
+
+#list/Array
+
+
+fruits:
+ - banana
+ - orange
+ - apple
+ 
+vegetables:
+  - carrot
+  - potato
+  - tomato
+ 
+
+#Dictionary/Map
+
+Banana: 
+    Calories: 106 g
+    Fat: 0.6 g
+    Carbs: 30 g
+    
+Orange:
+    Calories: 110 g
+    Fat: 0.8 g
+    Carbs: 40 g
+
+#Combination of Array & Dictionary
+
+Fruits:
+    - Banana
+        Calories: 106 g
+        Fat: 0.6 g
+        Carbs: 30 g
+    - Orange
+               Calories: 110 g
+               Fat: 0.8 g
+               Carbs: 40 g 

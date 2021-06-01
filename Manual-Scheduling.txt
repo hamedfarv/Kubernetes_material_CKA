@@ -1,0 +1,13 @@
+// Kubernetes Scheduling
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+// Kubernetes Scheduling
+
+
+kubectl get pods --selector app=myapp
+
+kubectl get pods --selector tier=dev
+
+kubectl get all --selector env=prod
+
+kubectl get all --selector env=prod,bu=finance,tier=frontend

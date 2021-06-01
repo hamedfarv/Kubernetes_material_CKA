@@ -1,0 +1,12 @@
+// Kubernetes Cluster Maintenance
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+
+
+kubectl drain node01 --ignore-daemonsets
+
+kubectl uncordon node01
+
+kubectl cordon node03
+
+kubectl drain node02 --ignore-daemonsets --force

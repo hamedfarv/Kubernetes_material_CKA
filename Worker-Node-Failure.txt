@@ -1,0 +1,52 @@
+// Kubernetes TroubleShooting
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+
+######### Application Failure #########
+
+kubectl -n alpha get svc mysql
+
+kubectl -n alpha get all
+
+kubectl -n alpha get svc mysql -o yaml > my_service.yaml
+
+kubectl -n alpha delete svc mysql
+
+kubectl describe svc mysql-service -n beta
+
+kubectl -n gamma expose pod mysql --name=mysql-service
+
+kubectl -n gamma get ep
+
+
+######### Control Plane Failure #########
+
+kubectl get all 
+
+kubectl describe pod 
+
+kubectl get pods -n kube-system
+
+kubectl -n kube-system describe pod kube-sheduler-master
+
+kubectl scale deployement app --replicas=2
+
+kubectl -n kube-system logs kube-control-manager-master
+
+
+######### Worker Node Failure #########
+
+ps -ef |grep -i kubelet
+
+systemctl status kubelet.service
+
+systemctl restart kubelet
+
+kubectl describe node node01
+
+jounrnalctl -u kubelet
+
+cd /etc/systemd/system/kubelet.service.d/
+
+systemctl daemon.reload
+

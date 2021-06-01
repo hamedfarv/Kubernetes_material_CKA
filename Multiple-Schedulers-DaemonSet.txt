@@ -1,0 +1,40 @@
+// Kubernetes Scheduling
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+// Kubernetes Scheduling
+
+
+kubectl get pods --selector app=myapp
+
+kubectl get pods --selector tier=dev
+
+kubectl get all --selector env=prod
+
+kubectl get all --selector env=prod,bu=finance,tier=frontend
+
+
+///// Node Selector , Affinity
+
+kubectl label nodes node01 size=Large
+
+kubectl get pods -o wide
+
+kubectl describe node node01
+
+////daemonsets Multiple schedulers
+
+
+kubectl get pod elephant -o yaml >> my_pod.yaml
+
+kubectl get daemonsets --all-namespaces
+
+kubectl describe daemonset kube-flannel-ds-amd64 --namespace=kube-system
+
+
+kubectl get pods --namespace=kube-system
+
+kubectl describe pod kube-scheduler-master --namespace=kube-system
+
+Use the file at /etc/kubernetes/manifests/kube-scheduler.yaml
+
+

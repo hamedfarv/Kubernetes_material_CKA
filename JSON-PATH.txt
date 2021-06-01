@@ -1,0 +1,22 @@
+// Kubernetes  JSON PATH
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+
+#########  JSON PATH #########
+
+kubectl get nodes -o json > /opt/outputs/nodes.json
+
+kubectl get node node01 -o json > node01.json
+
+
+kubectl get nodes -o=jsonpath='{.items[*].metadata.name}' > name_nodes.txt
+
+kubectl get nodes -o jsonpath='{.items[*].status.nodeInfo.osImage}' > osImage.txt
+
+kubectl config view --kubeconfig=my-kube-config -o jsonpath="{.users[*].name}" > mynames.txt
+
+kubectl get pv --sort-by=.spec.capacity.storage > storage_capacity.txt
+
+kubectl get pv --sort-by=.spec.capacity.storage -o=custom-columns=NAME:.metadata.name,CAPACITY:.spec.capacity.storage > /opt/outputs/pv-and-capacity-sorted.txt
+
+kubectl config view --kubeconfig=my-kube-config -o jsonpath="{.contexts[?(@.context.user=='aws-user')].name}" > /opt/outputs/aws-context-name

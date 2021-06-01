@@ -1,0 +1,14 @@
+// Kubernetes engine on GCP (Google cloud platform)
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+// Application deployment on kubernetes cluster
+
+
+kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
+
+kubectl expose deployment hello-server --type LoadBalancer --port 80 --target-port 8080
+
+kubectl get pods
+
+kubectl get service hello-server
+

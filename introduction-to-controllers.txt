@@ -1,0 +1,16 @@
+// Kubernetes core Objects
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+// Kubernetes Replication controllers / replicaset / Scaling
+
+kubectl get nodes
+
+kubectl get pods
+
+kubectl create -f rc-def.yml
+
+kubectl get replicationcontrollers
+
+kubectl scale --replicas=6 -f replicaset-def.yml
+
+kubectl scale --replicas=6 replicaset myapp-replicaset

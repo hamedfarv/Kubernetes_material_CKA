@@ -1,0 +1,32 @@
+// Kubernetes Core Concepts
+// Author: Hamed Farvardin
+// Ubuntu 18.04.1 LTS 
+// Kubernetes Core Concepts - ETCD
+
+
+##Website URL - lab :
+
+https://www.katacoda.com/
+
+##download and run etcd
+
+sudo apt -y install wget
+
+export RELEASE="3.3.13"
+
+wget https://github.com/etcd-io/etcd/releases/download/v${RELEASE}/etcd-v${RELEASE}-linux-amd64.tar.gz
+
+tar xvf etcd-v${RELEASE}-linux-amd64.tar.gz
+
+./etcd
+
+./etcdctl set key1 value1
+
+./etcdctl get key1
+
+
+########
+
+kubectl get pods -n kube-system
+
+kubectl exec etcd-master -n kube-system etcdctl get / --perfix -key-only 
